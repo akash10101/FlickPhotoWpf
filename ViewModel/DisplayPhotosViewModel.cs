@@ -31,13 +31,10 @@ namespace PhotoSearch.ViewModel
         }
 
 
-        public DisplayPhotosViewModel(NavigationService navigationService, SearchPhotoInformation info)
+        public DisplayPhotosViewModel(NavigationService navigationService)
         {
             BackNavigationCommand = new NavigationCommand(navigationService);
-            SearchCommand = new FetchPhotoCommand(new GetPhotosViewModel(new Models.SearchPhotoInformation()
-            { searchText = "nature"
-            },
-            ))
+            
         }
 
 
