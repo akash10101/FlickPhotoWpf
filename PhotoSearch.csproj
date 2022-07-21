@@ -192,10 +192,5 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="back.png" />
-    <Resource Include="Camera-With-Flash-Emoji.png" />
-    <Resource Include="P.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
