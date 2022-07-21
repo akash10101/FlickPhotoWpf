@@ -2,12 +2,6 @@
 using PhotoSearch.Services;
 using PhotoSearch.Store;
 using PhotoSearch.ViewModel;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace PhotoSearch
@@ -17,14 +11,26 @@ namespace PhotoSearch
     /// </summary>
     public partial class App : Application
     {
-        public SearchPhotoInformation infoSearch = new SearchPhotoInformation();
-        public NavigationStore store = new NavigationStore();
+        public SearchPhotoInformation infoSearch;
+        public NavigationStore store;
+        private GetPhotosViewModel getModel;
+        private DisplayPhotosViewModel displayModel;
+
+        public App()
+        {
+            infoSearch = new SearchPhotoInformation();
+            store = new NavigationStore();
+            getModel = new GetPhotosViewModel(infoSearch, new NavigationService(store, CreateDisplayPhotosViewModel));
+            displayModel = new DisplayPhotosViewModel(new NavigationService(store, CreateGetPhotosViewModel), infoSearch);
+        } 
+
         protected override void OnStartup(StartupEventArgs e)
         {
             store.CurrentViewModel = CreateGetPhotosViewModel();
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel(store)
+                DataContext = new MainViewModel(store),
+                ResizeMode = ResizeMode.NoResize
             };
             MainWindow.Show();
             base.OnStartup(e);
@@ -32,12 +38,12 @@ namespace PhotoSearch
 
         private GetPhotosViewModel CreateGetPhotosViewModel()
         {
-            return new GetPhotosViewModel(infoSearch, new NavigationService(store, CreateDisplayPhotosViewModel));
+            return getModel;
         }
 
         private DisplayPhotosViewModel CreateDisplayPhotosViewModel()
         {
-            return new DisplayPhotosViewModel(new NavigationService(store, CreateGetPhotosViewModel));
+            return displayModel;
         }
     }
 }

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="0" runstate="Runnable" testcasecount="5" result="Passed" total="5" passed="5" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="4" engine-version="3.15.2.0" clr-version="4.0.30319.42000" start-time="2022-07-21 07:21:31Z" end-time="2022-07-21 07:21:37Z" duration="5.643335">
+  <command-line><![CDATA[nunit3-console.exe  "E:\Users\lenovo pc\source\repos\PhotoSearch\PhotoSearchUnitTests\bin\x64\Release\PhotoSearchUnitTests.dll"]]></command-line>
+  <test-suite type="Assembly" id="1-1008" name="PhotoSearchUnitTests.dll" fullname="E:\Users\lenovo pc\source\repos\PhotoSearch\PhotoSearchUnitTests\bin\x64\Release\PhotoSearchUnitTests.dll" runstate="Runnable" testcasecount="5" result="Passed" start-time="2022-07-21T07:21:33.3765260Z" end-time="2022-07-21T07:21:37.0921344Z" duration="3.713409" total="5" passed="5" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="4">
+    <environment framework-version="3.13.3.0" clr-version="4.0.30319.42000" os-version="Microsoft Windows NT 10.0.22000.0" platform="Win32NT" cwd="E:\Users\lenovo pc\source\repos\PhotoSearch\packages\NUnit.ConsoleRunner.3.15.2\tools" machine-name="AKASH" user="Akash" user-domain="AKASH" culture="en-IN" uiculture="en-US" os-architecture="x64" />
+    <settings>
+      <setting name="DisposeRunners" value="True" />
+      <setting name="WorkDirectory" value="E:\Users\lenovo pc\source\repos\PhotoSearch\packages\NUnit.ConsoleRunner.3.15.2\tools" />
+      <setting name="ImageRuntimeVersion" value="4.0.30319" />
+      <setting name="ImageTargetFrameworkName" value=".NETFramework,Version=v4.7.2" />
+      <setting name="ImageRequiresX86" value="False" />
+      <setting name="ImageRequiresDefaultAppDomainAssemblyResolver" value="False" />
+      <setting name="TargetRuntimeFramework" value="net-4.7.2" />
+      <setting name="NumberOfTestWorkers" value="8" />
+    </settings>
+    <properties>
+      <property name="_PID" value="30320" />
+      <property name="_APPDOMAIN" value="domain-" />
+    </properties>
+    <test-suite type="TestSuite" id="1-1009" name="PhotoSearchUnitTests" fullname="PhotoSearchUnitTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2022-07-21T07:21:33.4253988Z" end-time="2022-07-21T07:21:37.0921344Z" duration="3.667339" total="5" passed="5" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="4">
+      <test-suite type="TestFixture" id="1-1000" name="GetPhotosViewModelUnitTest" fullname="PhotoSearchUnitTests.GetPhotosViewModelUnitTest" classname="PhotoSearchUnitTests.GetPhotosViewModelUnitTest" runstate="Runnable" testcasecount="2" result="Passed" start-time="2022-07-21T07:21:33.4313761Z" end-time="2022-07-21T07:21:34.9985671Z" duration="1.566983" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="2">
+        <test-case id="1-1001" name="SearchButtonIsDisabled" fullname="PhotoSearchUnitTests.GetPhotosViewModelUnitTest.SearchButtonIsDisabled" methodname="SearchButtonIsDisabled" classname="PhotoSearchUnitTests.GetPhotosViewModelUnitTest" runstate="Runnable" seed="462174736" result="Passed" start-time="2022-07-21T07:21:33.4413557Z" end-time="2022-07-21T07:21:34.9786179Z" duration="1.538104" asserts="1" />
+        <test-case id="1-1002" name="SearchButtonIsEnabled" fullname="PhotoSearchUnitTests.GetPhotosViewModelUnitTest.SearchButtonIsEnabled" methodname="SearchButtonIsEnabled" classname="PhotoSearchUnitTests.GetPhotosViewModelUnitTest" runstate="Runnable" seed="2049104911" result="Passed" start-time="2022-07-21T07:21:34.9855924Z" end-time="2022-07-21T07:21:34.9945760Z" duration="0.009414" asserts="1" />
+      </test-suite>
+      <test-suite type="TestFixture" id="1-1003" name="NavigationServiceUnitTests" fullname="PhotoSearchUnitTests.NavigationServiceUnitTests" classname="PhotoSearchUnitTests.NavigationServiceUnitTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2022-07-21T07:21:35.0045503Z" end-time="2022-07-21T07:21:35.0075455Z" duration="0.003773" total="1" passed="1" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+        <test-case id="1-1004" name="NavigateToOtherView" fullname="PhotoSearchUnitTests.NavigationServiceUnitTests.NavigateToOtherView" methodname="NavigateToOtherView" classname="PhotoSearchUnitTests.NavigationServiceUnitTests" runstate="Runnable" seed="1244918716" result="Passed" start-time="2022-07-21T07:21:35.0045503Z" end-time="2022-07-21T07:21:35.0075455Z" duration="0.003525" asserts="1" />
+      </test-suite>
+      <test-suite type="TestFixture" id="1-1005" name="SearchPhotoInformationUnitTest" fullname="PhotoSearchUnitTests.SearchPhotoInformationUnitTest" classname="PhotoSearchUnitTests.SearchPhotoInformationUnitTest" runstate="Runnable" testcasecount="2" result="Passed" start-time="2022-07-21T07:21:35.0075455Z" end-time="2022-07-21T07:21:37.0921344Z" duration="2.084331" total="2" passed="2" failed="0" warnings="0" inconclusive="0" skipped="0" asserts="1">
+        <test-case id="1-1006" name="FetchPhotoFromFlickrSuccessfully" fullname="PhotoSearchUnitTests.SearchPhotoInformationUnitTest.FetchPhotoFromFlickrSuccessfully" methodname="FetchPhotoFromFlickrSuccessfully" classname="PhotoSearchUnitTests.SearchPhotoInformationUnitTest" runstate="Runnable" seed="964363624" result="Passed" start-time="2022-07-21T07:21:35.0085070Z" end-time="2022-07-21T07:21:36.6665661Z" duration="1.658352" asserts="1" />
+        <test-case id="1-1007" name="FetchPhotoUnsuccessfulWrongAPI" fullname="PhotoSearchUnitTests.SearchPhotoInformationUnitTest.FetchPhotoUnsuccessfulWrongAPI" methodname="FetchPhotoUnsuccessfulWrongAPI" classname="PhotoSearchUnitTests.SearchPhotoInformationUnitTest" runstate="Runnable" seed="1820326748" result="Passed" start-time="2022-07-21T07:21:36.6665661Z" end-time="2022-07-21T07:21:37.0921344Z" duration="0.425606" asserts="0" />
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

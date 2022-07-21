@@ -2,35 +2,42 @@
 using PhotoSearch.Models;
 using PhotoSearch.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+using System.IO;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace PhotoSearch.ViewModel
 {
     public class GetPhotosViewModel : ViewModelBase
     {
+        private string _searchText;
+
+        public ICommand SearchCommand { get; }
+
+        public ImageSource bckSource { get; }
+
+        public ImageSource logoSource { get; }
+
+        public ImageSource logoTextSource { get; }
+
         public GetPhotosViewModel(SearchPhotoInformation info, NavigationService DisplayPhotosViewNavigationService)
         {
             SearchCommand = new FetchPhotoCommand(this, info, DisplayPhotosViewNavigationService);
+            bckSource = new BitmapImage(new Uri(Path.GetFullPath(@"..\..\..\Resources\back.png")));
+            logoSource = new BitmapImage(new Uri(Path.GetFullPath(@"..\..\..\Resources\Camera-With-Flash-Emoji.png")));
+            logoTextSource = new BitmapImage(new Uri(Path.GetFullPath(@"..\..\..\Resources\P.png")));
         }
 
-        public Visibility visibility { get; set; }
-
-        private string _searchText;
 
         public string SearchText  
         {
             get { return _searchText; }
-            set { _searchText = value;
+            set
+            { 
+                _searchText = value;
                 OnPropertyChanged(nameof(SearchText));
             }
         }
-
-        public ICommand SearchCommand { get; }
-
     }
 }

@@ -1,4 +1,5 @@
 ﻿using FlickrNet;
+using PhotoSearch.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,32 +22,10 @@ namespace PhotoSearch
     /// </summary>
     public partial class DisplayPhotos : UserControl
     {
-        public PhotoCollection foto = null;
         public DisplayPhotos()
         {
             InitializeComponent();
-            CreateWrapPanel();
-            
-            
-        }
-
-        private void CreateWrapPanel()
-        {
-            disp.Orientation = Orientation.Horizontal;
-            //disp.Width = 400;
-            var f = new Flickr("3b4a7c41b858850dfa115145f96fdfbf");
-            var options = new PhotoSearchOptions
-            { Tags = "Nature", PerPage = 20, Page = 1 };
-            PhotoCollection photos = f.PhotosSearch(options);
-
-            foreach(var photo in photos)
-            {
-                Image img = new Image()
-                {
-                    Source = new BitmapImage(new Uri(photo.ThumbnailUrl))
-                };
-                disp.Children.Add(img);
-            }
         }
     }
+        
 }

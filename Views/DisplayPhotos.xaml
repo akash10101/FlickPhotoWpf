@@ -4,23 +4,37 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" 
+             >
+    <UserControl.Background>
+        <ImageBrush ImageSource="{Binding bckSource}"></ImageBrush>
+    </UserControl.Background>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Button Name="BackButton" Command="{Binding BackNavigationCommand}" Margin="30 0 500 0" >Back</Button>
-            <TextBox Name="searchText" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="120 0 300 0"></TextBox>
-            <Button Name="SearchButton" Command="{Binding SearchCommand}" Margin="350 0 200 0" >Search</Button>
+        <Grid Grid.Row="0" Margin="0 30 0 0">
+            <Button Name="BackButton" Command="{Binding BackNavigationCommand}" Margin="0 0 1100 0" Width="100">Back</Button>
+            <TextBox Name="searchText" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}" Margin="0 0 800 0" Width="180"></TextBox>
+            <Button Name="SearchButton" Command="{Binding SearchCommand}" Margin="0 0 500 0" Width="100">Search</Button>
         </Grid>
         <Grid Grid.Row="1" Margin="0 50 0 0">
-            <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" Width="auto">
-                <WrapPanel Name="disp" Width="500" Height="320" ItemHeight="50">
-               
-                </WrapPanel>
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Width="1000" Height="auto" >
+                <ItemsControl Name="qws" ItemsSource="{Binding PhotoSource}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" Height="auto" Width="1000" ItemHeight="180" ItemWidth="250" Margin="0 0 0 0"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding source}" Width="150" Margin="0 0 0 0" MaxHeight="150"></Image>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </ScrollViewer>
         </Grid>
     </Grid>
+    
 </UserControl>

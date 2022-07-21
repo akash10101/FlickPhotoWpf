@@ -1,11 +1,9 @@
-﻿using FlickrNet;
-using PhotoSearch.Models;
+﻿using PhotoSearch.Models;
 using PhotoSearch.Services;
-using PhotoSearch.Store;
 using PhotoSearch.ViewModel;
 
 using System.ComponentModel;
-
+using System.Windows;
 
 namespace PhotoSearch.Commands
 {
@@ -13,14 +11,13 @@ namespace PhotoSearch.Commands
     {
         private readonly SearchPhotoInformation _photoInfo;
         private readonly GetPhotosViewModel _viewModel;
-        private readonly NavigationService _navigationService; 
+        private readonly NavigationService _navigationService;
         public FetchPhotoCommand(GetPhotosViewModel viewModel, SearchPhotoInformation info, NavigationService DisplayPhotoNavigationServie )
         {
             _viewModel = viewModel;
             _photoInfo = info;
             _navigationService = DisplayPhotoNavigationServie;
             _viewModel.PropertyChanged += OnViewModelPropertyChanged;
-
         }
 
         private void OnViewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -30,14 +27,16 @@ namespace PhotoSearch.Commands
                 OnCanExecutedChanged();
             }
         }
+
         public override void Execute(object parameter)
         {
-            var f = new Flickr("3b4a7c41b858850dfa115145f96fdfbf");
-            var options = new PhotoSearchOptions
-            { Tags = _viewModel.SearchText, PerPage = 20, Page = 1 };
-            PhotoCollection photos = f.PhotosSearch(options);
-            _navigationService.Navigate();
+            _photoInfo.searchText = _viewModel.SearchText;
 
+            _photoInfo.photos = _photoInfo.GetPhotosFromFlickr(_viewModel.SearchText);
+            if (_photoInfo.photos.Count == 0)
+                MessageBox.Show("No images found. Please search again");
+
+            _navigationService.Navigate();
         }
 
         public override bool CanExecute(object parameter)

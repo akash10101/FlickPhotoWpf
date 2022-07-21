@@ -25,22 +25,8 @@ namespace PhotoSearch
         public GetPhotos()
         {
             InitializeComponent();
-            
-            
-            BitmapImage a = new BitmapImage();
-          //  visibility = "Visible";
-           
-            // yo.Source = (ImageSource)"adasda";
-            
 
         }
-        public string visibility
-        {
-            get { return (string)GetValue(visibleStateProperty); }
-            set { SetValue(visibleStateProperty, value); }
-        }
 
-        public static readonly DependencyProperty visibleStateProperty = DependencyProperty.Register("visibility", typeof(string), typeof(MainWindow), new PropertyMetadata("Visible"));
-        
     }
 }

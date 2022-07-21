@@ -82,11 +82,18 @@
     <ErrorReport>prompt</ErrorReport>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="FlickrNet, Version=3.26.0.0, Culture=neutral, PublicKeyToken=2491df59efa5d132, processorArchitecture=MSIL">
       <HintPath>packages\FlickrNet.3.26.0\lib\net20\FlickrNet.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -125,6 +132,8 @@
     <Compile Include="Commands\BackNavigationCommand.cs" />
     <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="Commands\FetchPhotoCommand.cs" />
+    <Compile Include="Commands\SearchPhotosCommand.cs" />
+    <Compile Include="Models\ImageInformation.cs" />
     <Compile Include="Models\SearchPhotoInformation.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Store\NavigationStore.cs" />
@@ -182,6 +191,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="back.png" />
+    <Resource Include="Camera-With-Flash-Emoji.png" />
+    <Resource Include="P.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

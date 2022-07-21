@@ -6,10 +6,8 @@
         xmlns:views="clr-namespace:PhotoSearch"
         xmlns:vms ="clr-namespace:PhotoSearch.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid MaxWidth="600">
-        <!--<views:GetPhotos  DataContext="{Binding CurrentModel}"/>-->
-
+        Title="MainWindow" Height="900" Width="1400">
+    <Grid>
         <Grid.Resources>
             <DataTemplate DataType="{x:Type vms:GetPhotosViewModel}">
                 <views:GetPhotos/>
